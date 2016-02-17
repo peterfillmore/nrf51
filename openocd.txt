@@ -1,0 +1,7 @@
+reset halt;
+nrf51 mass_erase;
+program softdevice.hex
+verify
+program app.hex
+verify
+reset run

@@ -3,10 +3,10 @@ TOOLCHAIN = ../toolchain/arm_cm0/bin/arm-none-eabi-
 # arm-none-eabi-gcc executable
 CC   = $(TOOLCHAIN)gcc
 # arm-none-eabi-objcopy executable          
-CP   = $(TOOLCHAIN)objcopy    
+CP   = $(TOOLCHAIN)objcopy
 # output format is raw binary and we strip the symbol information from source files                      
-BIN  = $(CP) -O binary -S     
-
+BIN  = $(CP) -O binary -S
+HEX  = $(CP) -O ihex -S
 
 # Sources
 # linker script directory
@@ -60,7 +60,7 @@ CPFLAGS += -MD -MP -MF .dep\$(@F).d
 
 # Rules
  
-all: $(OBJS) $(PROJECT_NAME).elf  $(PROJECT_NAME).bin $(PROJECT_NAME).map
+all: $(OBJS) $(PROJECT_NAME).elf  $(PROJECT_NAME).bin $(PROJECT_NAME).map $(PROJECT_NAME).hex
  
  %o: %c
 	$(CC) -c $(CPFLAGS) -I . $(INCLUDE_DIR) $< -o $@
@@ -72,7 +72,9 @@ all: $(OBJS) $(PROJECT_NAME).elf  $(PROJECT_NAME).bin $(PROJECT_NAME).map
 %bin: %elf
 	$(BIN)  $< $@
 
-	
+%hex: %elf
+	$(HEX)  $< $@
+
 clean:
 	find ./ -name '*~' | xargs rm -f
 	rm -f $(OBJS)

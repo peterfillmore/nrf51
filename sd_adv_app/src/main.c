@@ -16,7 +16,7 @@
 #define APP_ADV_CUSTOM_DATA			    "hello world!"
 #define APP_ADV_INTERVAL                320        // 320 * 0.625ms = 200ms
 
-#define GREEN_LED_PIN					12
+#define GREEN_LED_PIN				    22	
 
 static void ble_evt_dispatch(ble_evt_t * p_ble_evt)
 {

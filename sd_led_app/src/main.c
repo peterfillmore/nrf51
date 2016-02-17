@@ -17,9 +17,9 @@
 #define APP_ADV_CUSTOM_DATA			    "hello world!"
 #define APP_ADV_INTERVAL                320        // 320 * 0.625ms = 200ms
 
-#define RED_LED_PIN                     16
-#define BLUE_LED_PIN					15
-#define GREEN_LED_PIN                   12
+#define RED_LED_PIN                     22 
+#define BLUE_LED_PIN				    21	
+#define GREEN_LED_PIN                   20 
 
 static ble_led_t _led;
 

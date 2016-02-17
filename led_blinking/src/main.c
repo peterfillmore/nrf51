@@ -9,7 +9,7 @@
 #include "nrf51_bitfields.h"
 #include "nrf_delay.h"
 
-#define GREEN_LED_PIN	12
+#define GREEN_LED_PIN   22	
 
 int main(void){
 	// setup led gpio in output mode

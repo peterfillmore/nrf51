@@ -1,4 +1,4 @@
-SDK_DIRECTORY = ../sdk/nRF51_SDK_9.0.0_2e23562/components
+SDK_DIRECTORY = ../sdk/nRF51_SDK_10.0.0_dc26b5e/components
 
 # System
 INCLUDES  += $(SDK_DIRECTORY)/toolchain
@@ -105,8 +105,10 @@ SRC 	  += $(shell find $(SDK_DIRECTORY)/drivers_nrf/wdt -name *.c)
 CPFLAGS   += -DUSE_DRV_WDT
 endif
 
-INCLUDES  += $(SDK_DIRECTORY)/drivers_nrf/hal
-SRC 	  += $(shell find $(SDK_DIRECTORY)/drivers_nrf/hal -name *.c)
+#INCLUDES  += $(SDK_DIRECTORY)/drivers_nrf/hal
+#SRC 	  += $(shell find $(SDK_DIRECTORY)/drivers_nrf/hal -name *.c)
+INCLUDES  += $(SDK_DIRECTORY)/drivers_nrf/delay
+SRC 	  += $(shell find $(SDK_DIRECTORY)/drivers_nrf/delay -name *.c)
 INCLUDES  += $(SDK_DIRECTORY)/drivers_nrf/common
 SRC 	  += $(shell find $(SDK_DIRECTORY)/drivers_nrf/common -name *.c)
 
